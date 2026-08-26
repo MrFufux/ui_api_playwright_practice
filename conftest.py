@@ -28,7 +28,7 @@ def browser_context_args(browser_context_args: dict) -> dict:
         # Add custom settings without losing the original data
         **browser_context_args,
         "viewport": {"width":1920, "height":1080},
-        "base_url": {base_url}
+        "base_url": base_url
     }
 
 # ----------------------------------------------------------------------
