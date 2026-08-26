@@ -19,7 +19,7 @@ from typing import Generator
 def browser_context_args(browser_context_args: dict) -> dict:
     
     # Fallback to a default if the env varuiable isn't set
-    base_url = os.getenv('UI_BASE_URL', 'https://demoqa.com/')
+    base_url = os.getenv('UI_BASE_URL', 'https://xqa.io/practice')
     
     return {
         # **: takes all the existing key-value pairs from the 
