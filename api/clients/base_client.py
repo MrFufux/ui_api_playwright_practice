@@ -1,0 +1,1 @@
+# wraps httpx.Client: base_url, headers, auth, logging

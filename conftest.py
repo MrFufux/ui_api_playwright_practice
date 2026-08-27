@@ -2,6 +2,7 @@
 # Dependency injection hub
 # Holds all the fixtures (setup and teardowns)
 # Tests file stay clean
+# root conftest.py: shared/session fixtures used both suites
 
 import pytest
 import os
