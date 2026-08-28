@@ -1,6 +1,6 @@
 # Parent my class
 # OOP principles: Inheritance, Abstraction, Encapsulation, Polymorphism
-from playwright.sync_api import Page
+from playwright.sync_api import Page, Locator
 
 # Parent Class for all Page objects
 # encapsulation
@@ -17,7 +17,7 @@ class BasePage:
         
     # Reusable custom click method
     # Accepts raw locatores(css, xpath) or playwright locators
-    def click_element(self, locator, action_timeout: int = 5000):
+    def click_element(self, locator: str | Locator, action_timeout: int = 5000):
         # Ternary operator: one line if else
         # Polymorphism => Method overloading
         # isintance: it's a type checking
@@ -35,7 +35,7 @@ class BasePage:
     # Reusable custom wait method
     # waits for a specific UI state without performing any action
     # useful for cases where Playwright's auto-wait doesn't apply (e.g. screenshots, assertions)
-    def wait_for_element_visible(self, locator, action_timeout: int = 10000):
+    def wait_for_element_visible(self, locator: str | Locator, action_timeout: int = 10000):
         # Ternary operator: one line if else
         # if isintance(locator, str) -> verifies is a str
         # if True -> assumes that is a locator(css, xpath as text) and transform it 
@@ -45,5 +45,14 @@ class BasePage:
         
         # wait_for() 
         element.wait_for(state='visible', timeout=action_timeout)
+        
+    # Reusable custom fill text method
+    def fill_text(self, locator: str | Locator, text: str, action_timeout: int = 5000):
+        
+        element = self.page.locator(locator) if isinstance(locator, str) else locator
+        
+        # .fill() automatically waits for the element to be visible, enabled and editable
+        element.fill(text, timeout=action_timeout)
+        
         
             
