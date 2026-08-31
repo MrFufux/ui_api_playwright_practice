@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .env
 .mcp.json
+.claude/settings.local.json
+report.html
+test-results/
+playwright-report/
+allure-results/
