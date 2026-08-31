@@ -54,5 +54,11 @@ class BasePage:
         # .fill() automatically waits for the element to be visible, enabled and editable
         element.fill(text, timeout=action_timeout)
         
+    # Custom navigation method
+    # Navigates to a specific path using the base_url in conftest.py
+    # path = '' : the path is optional, if not path => empty string
+    def navigate(self, path = ''):
+        self.page.goto(path)
+        
         
             
