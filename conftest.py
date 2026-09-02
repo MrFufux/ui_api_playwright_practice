@@ -42,7 +42,10 @@ def browser_context_args(browser_context_args: dict) -> dict:
 @pytest.fixture(scope='function')
 def ui_page(page:Page) -> Generator:
     # Setup: Go to the homepage before the test begins
-    page.goto('/')
+    # Note: goto('/') resolves to the site root, discarding the base_url's
+    # path (e.g. 'https://xqa.io/practice' -> 'https://xqa.io/'). Use ''
+    # so the base_url's own path is preserved.
+    page.goto('')
     # yield hands control over to the actual test function
     yield page
     
