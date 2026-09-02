@@ -47,12 +47,13 @@ class BasePage:
         element.wait_for(state='visible', timeout=action_timeout)
         
     # Reusable custom fill text method
-    def fill_text(self, locator: str | Locator, text: str, action_timeout: int = 5000):
+    def fill_text(self, locator: str | Locator, text: str, delay: int = 100, action_timeout: int = 5000):
         
         element = self.page.locator(locator) if isinstance(locator, str) else locator
         
         # .fill() automatically waits for the element to be visible, enabled and editable
-        element.fill(text, timeout=action_timeout)
+        # .press_sequentially(): method that types like a human. You need to set up a delay
+        element.press_sequentially(text,delay=delay, timeout=action_timeout)
         
     # Custom navigation method
     # Navigates to a specific path using the base_url in conftest.py
