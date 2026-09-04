@@ -12,7 +12,8 @@ class CheckBox(BasePage):
         # Finds the label "Home", then looks at any earlier sibling <span> (same parent) 
         # and grabs the <input> nested inside it, no matter how deep
         self.home_option = self.page.locator("//label[text()='Home']/preceding-sibling::span//input")
-        self.toggle_button = self.page.locator("div.flex.items-center.gap-2.py-1")
+        #self.toggle_button = self.page.locator("div.flex.items-center.gap-2.py-1")
+        self.toggle_button = self.page.locator("div.flex.items-center.gap-2.py-1", has_text="Home").get_by_role("button", name="Toggle")
 
     
     # Methods 
