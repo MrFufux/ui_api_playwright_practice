@@ -19,7 +19,7 @@ from typing import Generator
 @pytest.fixture(scope='session')
 def browser_context_args(browser_context_args: dict) -> dict:
     
-    # Fallback to a default if the env varuiable isn't set
+    # Fallback to a default if the env variable isn't set
     base_url = os.getenv('UI_BASE_URL', 'https://xqa.io/practice')
     
     return {
