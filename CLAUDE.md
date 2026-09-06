@@ -43,3 +43,4 @@ Two independent test layers sharing the same conventions, wired together by pyte
 - Tests use the AAA pattern with explicit `# 1. Arrange`, `# 2. Act`, `# 3. Assert` comments.
 - Comments lean heavily explanatory (OOP concepts, why a line is written a certain way) — this is intentional for a learning codebase; match that style in files following the same pattern rather than stripping comments down.
 - Every test function is tagged `@pytest.mark.ui` or `@pytest.mark.api`.
+- When walking the user through a new step (per the learning plan) and showing a code snippet/example, explain each line (or small group of related lines) after the snippet — what it does and why — rather than just describing the pattern at a high level.

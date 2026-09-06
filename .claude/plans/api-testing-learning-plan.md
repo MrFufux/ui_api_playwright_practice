@@ -29,6 +29,12 @@ Walk the user through these steps **one at a time**, in the chat — explain the
 show a small code sketch as an example (not written to their files), then let them write
 it themselves and confirm before moving on. Do not batch all steps into one dump.
 
+When showing a code sketch, annotate it line by line: after the snippet, walk through
+each non-trivial line (or short group of lines) and explain what it does and why it's
+written that way — not just the overall concept. Treat this the same as the codebase's
+own heavy-comment style, but delivered as chat explanation rather than inline comments
+in the sketch itself.
+
 ### Step 1 — Understand the client/resource pattern ✅ done
 ### Step 2 — Explore the target API ✅ done
 ### Step 3 — Build `BaseClient` ✅ done
