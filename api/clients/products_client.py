@@ -21,7 +21,7 @@ class ProductsClient(BaseClient):
         if skip is not None:
             params['skip'] = skip
             
-        return self.client.get("/products,", params=params)
+        return self.client.get("/products", params=params)
     
     # Fetches the products by id from the API
     def get_products_by_id(self, product_id: int):
